@@ -15,5 +15,6 @@
     ],
     "supportedTargets": [
         "ev3"
-    ]
+    ],
+    "preferredEditor": "tsprj"
 }

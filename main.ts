@@ -1,24 +1,18 @@
-let moc3 = 0
-// MISIJA 5(PUKL)
-brick.buttonLeft.onEvent(ButtonEvent.Pressed, function () {
+// MISIJA 3(JAJCA NA OKO)
+brick.buttonDown.onEvent(ButtonEvent.Pressed, function () {
     motors.largeBC.setInverted(true)
-    motors.largeBC.tank(30, 30, -3.7, MoveUnit.Rotations)
-    motors.mediumA.run(100, 0.8, MoveUnit.Seconds)
-    motors.largeB.run(30, 0.25, MoveUnit.Rotations)
-    motors.largeBC.tank(30, 30, -0.9, MoveUnit.Rotations)
-    motors.largeBC.tank(30, 0.5, MoveUnit.Rotations)
-    do_crte(90, 30, 1)
-    control.waitMicros(200000)
-    motors.largeB.run(30, -0.9, MoveUnit.Rotations)
-    motors.largeBC.tank(30, 30, 2.4, MoveUnit.Rotations)
+    pospesevanje(20)
+motors.largeBC.tank(10, 10, 2.2, MoveUnit.Rotations)
+    motors.largeC.run(30, 0.7, MoveUnit.Rotations)
+    motors.largeBC.tank(100, 100, -3, MoveUnit.Rotations)
 })
 // MISIJA 1()
 brick.buttonUp.onEvent(ButtonEvent.Pressed, function () {
     motors.largeBC.setInverted(true)
     pospesevanje(50)
-    vozi_ravno(40)
-    do_crte(90, 30, 2)
-    motors.stopAll()
+vozi_ravno(40)
+do_crte(90, 30, 2)
+motors.stopAll()
     control.waitMicros(1000)
     motors.mediumD.run(30, -2.2, MoveUnit.Rotations)
     motors.largeBC.tank(25, 25, -0.2, MoveUnit.Rotations)
@@ -29,7 +23,7 @@ brick.buttonUp.onEvent(ButtonEvent.Pressed, function () {
         motors.mediumA.run(100, 0.3, MoveUnit.Rotations)
         control.waitMicros(20000)
     }
-    motors.mediumA.run(100, -1, MoveUnit.Rotations)
+motors.mediumA.run(100, -1, MoveUnit.Rotations)
     motors.largeBC.tank(30, 30, -0.1, MoveUnit.Rotations)
     motors.mediumD.run(30, 3, MoveUnit.Rotations)
     motors.largeBC.tank(30, 30, -0.2, MoveUnit.Rotations)
@@ -42,35 +36,32 @@ brick.buttonUp.onEvent(ButtonEvent.Pressed, function () {
     motors.largeC.run(30, 1, MoveUnit.Rotations)
     motors.largeBC.tank(100, 100, -2.5, MoveUnit.Rotations)
 })
+// MISIJA 5(PUKL)
+brick.buttonLeft.onEvent(ButtonEvent.Pressed, function () {
+    motors.largeBC.setInverted(true)
+    motors.largeBC.tank(30, 30, -3.7, MoveUnit.Rotations)
+    motors.mediumA.run(100, 0.8, MoveUnit.Seconds)
+    motors.largeB.run(30, 0.25, MoveUnit.Rotations)
+    motors.largeBC.tank(30, 30, -0.9, MoveUnit.Rotations)
+    motors.largeBC.tank(30, 1, MoveUnit.Rotations)
+    do_crte(90, 30, 1)
+control.waitMicros(200000)
+    motors.largeB.run(30, -0.9, MoveUnit.Rotations)
+    motors.largeBC.tank(30, 30, 2.4, MoveUnit.Rotations)
+})
 // MISIJA 2(ORTODONT)
 brick.buttonEnter.onEvent(ButtonEvent.Pressed, function () {
     motors.largeBC.setInverted(true)
     pospesevanje(25)
-    vozi_ravno(52.2)
-    motors.mediumD.run(25, 2.5, MoveUnit.Rotations)
+motors.largeBC.tank(25, 25, 1.8, MoveUnit.Rotations)
+    motors.mediumD.run(25, 2, MoveUnit.Rotations)
     motors.largeBC.tank(10, 10, 1, MoveUnit.Rotations)
-    motors.mediumD.run(25, -1.3, MoveUnit.Rotations)
+    motors.mediumD.run(25, -1, MoveUnit.Rotations)
     motors.largeBC.steer(-41, 30, 0.5, MoveUnit.Rotations)
     motors.largeBC.steer(41, 30, 0.5, MoveUnit.Rotations)
     do_crte(90, 30, 2)
-    motors.mediumD.run(100, -2, MoveUnit.Rotations)
-    motors.largeBC.tank(30, 30, 0.7, MoveUnit.Rotations)
-    motors.largeBC.tank(-25, -25, 1.5, MoveUnit.Rotations)
-    motors.mediumD.run(25, 3, MoveUnit.Rotations)
-    motors.largeC.run(30, -0.08, MoveUnit.Rotations)
-    motors.largeBC.tank(30, 30, 0.7, MoveUnit.Rotations)
-    motors.largeB.run(30, -0.6, MoveUnit.Rotations)
-    motors.largeBC.tank(20, 20, 0.45, MoveUnit.Rotations)
-    motors.mediumD.run(100, -2.3, MoveUnit.Rotations)
-    motors.mediumD.run(100, 2.5, MoveUnit.Rotations)
-})
-// MISIJA 3(JAJCA NA OKO)
-brick.buttonDown.onEvent(ButtonEvent.Pressed, function () {
-    motors.largeBC.setInverted(true)
-    pospesevanje(20)
-    motors.largeBC.tank(10, 10, 2.2, MoveUnit.Rotations)
-    motors.largeC.run(30, 0.7, MoveUnit.Rotations)
-    motors.largeBC.tank(100, 100, -3, MoveUnit.Rotations)
+motors.mediumD.run(100, -2, MoveUnit.Rotations)
+    motors.largeBC.tank(30, 30, 1, MoveUnit.Rotations)
 })
 // MISIJA 4(GIGANTSKI STOLP)
 brick.buttonRight.onEvent(ButtonEvent.Pressed, function () {
@@ -83,7 +74,7 @@ let moc = 0
 let svetlost = 0
 let i = 0
 let senzor = 0
-moc3 = 0
+let moc3 = 0
 sensors.gyro3.calibrate()
 function pospesevanje(maxmoc: number) { // na vrhu napišeš do katere moči mora pospeševati. 
     while (moc < maxmoc) {
@@ -131,3 +122,5 @@ forever(function () {
     brick.showString("Gyro 3", 5)
     brick.showNumber(sensors.gyro3.angle(), 6)
 })
+
+//test
